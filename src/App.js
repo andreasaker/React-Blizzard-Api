@@ -7,7 +7,8 @@ const App = params => {
   let cors = require('cors');
   const axios = require('axios');
   let apiToken = {};
-  
+
+ 
 
   const tokenRequest = () => {
     
@@ -36,10 +37,8 @@ const App = params => {
     axios.get(href, {
         headers: {
           Authorization: 'Bearer ' + apiToken,
-          'Access-Control-Allow-Origin': "*"
-        },
-        params: {
-          grant_type: 'client_credentials',
+          'Access-Control-Allow-Origin': "*",
+          'Access-Control-Allow-Credentials': true
         }
     }).then(function (response) {
       //apiToken = response;
