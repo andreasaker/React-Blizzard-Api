@@ -37,7 +37,7 @@ const App = params => {
     axios.get(href, {
         headers: {
           Authorization: 'Bearer ' + apiToken,
-          'Access-Control-Allow-Origin': "*",
+          'Access-Control-Allow-Origin': "https://shrouded-wave-90291.herokuapp.com",
           'Access-Control-Allow-Credentials': true
         }
     }).then(function (response) {
