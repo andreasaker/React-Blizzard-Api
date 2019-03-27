@@ -3,7 +3,7 @@
 
 
   const axios = require('axios');
-  let token = {}
+  
 
 
   export let getToken = () => {
@@ -17,7 +17,7 @@
         }
     }).then(function (response) {
       console.log(response);
-      token = response;
+      return response;
     }).catch(function (error) {
       console.log(error);
     });
@@ -27,6 +27,7 @@
  
   
   export let getCharacterProfile = (region, realm, characterName) => {
+    let token = getToken()
     let href = 'https://cors-anywhere.herokuapp.com/https://' + region + '.api.blizzard.com/wow/character/' +  realm + '/' + characterName + '?fields=appearance&access_token=' + token.data.access_token
     
     axios.get(href, {

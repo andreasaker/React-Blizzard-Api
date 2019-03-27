@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import {getToken, getCharacterProfile} from './api/Battlenet';
+import {getCharacterProfile} from './api/Battlenet';
 
 const App = () => {
 
@@ -12,7 +12,7 @@ const App = () => {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            
+          
           </p>
           <a href="#" onClick={getCharacterProfile("eu", "Quel'Thalas", "Portvakt")}>
             request character
