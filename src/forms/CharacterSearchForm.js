@@ -1,15 +1,18 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {getToken, getCharacterProfile, getRealmList } from '../api/Battlenet';
 
 const CharacterSearchForm = props => {
     const profileData = {region: "eu", realm: "", name: ""}
     const [profile, setProfile] = useState(profileData);
-    
     const [realmList, setRealmList] = useState([]);
     
 
-    getRealmList().then(response => setRealmList(response));
-  
+    useEffect(()=>{
+        if(realmList.length < 1) {
+            getRealmList().then(response => setRealmList(response)); 
+        }
+    });
+
     
     const handleChange = e => {
       const{name, value} = e.target
@@ -25,6 +28,7 @@ const CharacterSearchForm = props => {
     async function getChar(params) {
       let t = await getToken();
       let c = await getCharacterProfile(t, params.region, params.realm, params.name);
+      
       return c
     }
     

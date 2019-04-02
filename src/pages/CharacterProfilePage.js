@@ -1,5 +1,4 @@
-import React, {useState} from 'react';
-import {getToken, getCharacterProfile, getRealmList } from '../api/Battlenet';
+import React from 'react';
 
 const CharacterProfilePage = props => {
     

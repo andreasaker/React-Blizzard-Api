@@ -17,18 +17,17 @@
  
   export const getCharacterProfile = (token, region, realm, characterName) => {
     let href = 'https://cors-anywhere.herokuapp.com/https://' + region + '.api.blizzard.com/wow/character/' +  realm + '/' + characterName + '?fields=appearance&access_token=' + token.data.access_token
-
+    
     return axios.get(href, {
         headers: {
           Authorization: 'Bearer ' + token.data.access_token
         }
-    }).then(response => response.data)
+    }).then(response => response.data).catch(error => error)
   }
 
   export async function getRealmList(){
     let token = await getToken();
     let href = 'https://cors-anywhere.herokuapp.com/https://eu.api.blizzard.com/wow/realm/status?access_token=' + token.data.access_token
-
     return axios.get(href, {
         headers: {
           Authorization: 'Bearer ' + token.data.access_token
