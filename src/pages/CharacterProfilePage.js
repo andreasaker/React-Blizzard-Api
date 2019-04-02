@@ -7,12 +7,18 @@ const CharacterProfilePage = props => {
         return <li key={key} >{key}: {props.character[key]} </li>
       }
     })
-
     return(
-      <div>
-        <ul>
-          {characterProp}
-        </ul>
+      <div class="flex-small">
+        
+          { props.character.hasOwnProperty('error') ?(
+            <div class="vertical-center content-section">Cant find that character</div>
+          ):(
+            <ul>
+            {characterProp}
+            </ul>
+          )}
+          
+        
       </div>
     );
   

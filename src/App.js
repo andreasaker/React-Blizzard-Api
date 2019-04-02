@@ -4,7 +4,7 @@ import CharacterProfilePage from './pages/CharacterProfilePage';
 
 const App = () => {
     const [character, setCharacter] = useState({});
-
+    
     
 
     return (
@@ -12,8 +12,9 @@ const App = () => {
           
             <CharacterSearchForm setCharacter={setCharacter} />
           
-      <div class="flex-row"></div>
+      <div class="flex-row">
         <CharacterProfilePage character={character} />
+      </div>
       </div>
     );
   

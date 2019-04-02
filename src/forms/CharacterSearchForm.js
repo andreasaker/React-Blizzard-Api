@@ -4,7 +4,7 @@ import {getToken, getCharacterProfile, realmList } from '../api/Battlenet';
 const CharacterSearchForm = props => {
     const profileData = {region: "eu", realm: "", name: ""}
     const [profile, setProfile] = useState(profileData);
-  
+    
 
     const handleChange = e => {
       const{name, value} = e.target
@@ -13,15 +13,24 @@ const CharacterSearchForm = props => {
 
     const handleSubmit = e => {
       e.preventDefault();
-      getChar(profile).then(response => props.setCharacter(response));
-      setProfile(profileData);
+      getChar(profile).then(response => {
+        if(response["name"].toLowerCase() === profile.name){
+          props.setCharacter(response)
+          setProfile(profileData);
+        }else{
+          console.log("Character dose not exist")
+          props.setCharacter({error: "Error"})
+        }
+      });
+
+      
+      
     }
 
     async function getChar(params) {
       let t = await getToken();
       let c = await getCharacterProfile(t, params.region, params.realm, params.name);
-      
-      return c
+      return c 
     }
     
     const selectList = realmList.map(r =>
@@ -35,13 +44,13 @@ const CharacterSearchForm = props => {
        <form onSubmit={handleSubmit}>
        <div class="flex-row">
        <div class="flex-small">
-         <select name="realm" onChange={handleChange}>
+         <select name="realm" value={profile.realm} onChange={handleChange}>
          <option >Choose realm</option>
            {selectList}
          </select>
         </div>
         <div class="flex-small">
-         <input type="text" name="name" onChange={handleChange} />
+         <input type="text" name="name" value={profile.name} onChange={handleChange} />
         </div>
         </div>
        </form>
