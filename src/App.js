@@ -1,24 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import {getCharacterProfile} from './api/Battlenet';
+import React, {useState} from 'react';
+import CharacterSearchForm from './forms/CharacterSearchForm';
+import CharacterProfilePage from './pages/CharacterProfilePage';
 
 const App = () => {
+    const [character, setCharacter] = useState({});
 
-   
-   
+    
+
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
+      <div class="medium-container">
           
-          </p>
-          <a href="#" onClick={getCharacterProfile("eu", "Quel'Thalas", "Portvakt")}>
-            request character
-          </a>
+            <CharacterSearchForm setCharacter={setCharacter} />
           
-        </header>
+      <div class="flex-row"></div>
+        <CharacterProfilePage character={character} />
       </div>
     );
   
