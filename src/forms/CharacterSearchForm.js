@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {getToken, getCharacterProfile, realmList } from '../api/Battlenet';
 
 const CharacterSearchForm = props => {
-    const profileData = {region: "eu", realm: "Quel'Thalas", name: "Portvakt"} //temp should be empty
+    const profileData = {region: "eu", realm: "", name: ""} 
     const [profile, setProfile] = useState(profileData);
     
 
