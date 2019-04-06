@@ -1,0 +1,24 @@
+.character{
+    padding: 0;
+}
+
+.character h1{
+    margin-bottom: 0;
+    float: left;
+}
+
+.character .role{
+    float: left;
+}
+
+.character img{
+    float: left;
+    margin: 0 1.5vw 0 0;
+}
+
+.character .level{
+    float: right;
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin-top: -12px;
+}

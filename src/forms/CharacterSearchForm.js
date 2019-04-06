@@ -1,8 +1,8 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {getToken, getCharacterProfile, realmList } from '../api/Battlenet';
 
 const CharacterSearchForm = props => {
-    const profileData = {region: "eu", realm: "", name: ""}
+    const profileData = {region: "eu", realm: "Quel'Thalas", name: "Portvakt"} //temp should be empty
     const [profile, setProfile] = useState(profileData);
     
 
@@ -14,7 +14,7 @@ const CharacterSearchForm = props => {
     const handleSubmit = e => {
       e.preventDefault();
       getChar(profile).then(response => {
-        if(response["name"].toLowerCase() === profile.name){
+        if(response["name"].toLowerCase() === profile.name.toLowerCase()){
           props.setCharacter(response)
           setProfile(profileData);
         }else{
@@ -30,6 +30,7 @@ const CharacterSearchForm = props => {
     async function getChar(params) {
       let t = await getToken();
       let c = await getCharacterProfile(t, params.region, params.realm, params.name);
+      console.log(c)
       return c 
     }
     

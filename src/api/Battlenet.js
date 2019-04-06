@@ -47,6 +47,22 @@
     return list;
   }
 
+export const classList = [
+  "None",
+  "Warrior",
+  "Paladin",
+  "Hunter",
+  "Rogue",
+  "Priest", 
+  "DeathKnight",
+  "Shaman",
+  "Mage",
+  "Warlock",
+  "Monk",
+  "Druid",
+  "Demon Hunter"
+]
+
 export const realmList = [
   "Aerie Peak",
   "Agamaggan",
