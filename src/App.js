@@ -10,9 +10,9 @@ const App = () => {
 
     return (
       <div class="medium-container">
-          
+      
             <CharacterSearchForm setCharacter={setCharacter} />
-          
+       
       <div class="flex-row">
         { Object.entries(character).length !== 0 &&
         <CharacterProfilePage character={character} />

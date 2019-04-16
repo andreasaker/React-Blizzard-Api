@@ -41,8 +41,8 @@ const CharacterSearchForm = props => {
     );
 
     return(
-      
-       <form onSubmit={handleSubmit}>
+     
+       <form onSubmit={handleSubmit} class="char-form">
        <div class="flex-row">
        <div class="flex-small">
          <select name="realm" value={profile.realm} onChange={handleChange}>
@@ -55,6 +55,7 @@ const CharacterSearchForm = props => {
         </div>
         </div>
        </form>
+       
     );
   }
   

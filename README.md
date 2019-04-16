@@ -1,3 +1,16 @@
+
+Battle.net app, mobile first
+My first app built on an api, only function right now is to search for characters.
+
+The only config you need is to create a .env with :
+REACT_APP_BNET_ID
+REACT_APP_BNET_SECRET
+
+Its also made for EU servers right now.
+Using https://cors-anywhere.herokuapp.com as proxy.
+
+
+---------------------------------------------------
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

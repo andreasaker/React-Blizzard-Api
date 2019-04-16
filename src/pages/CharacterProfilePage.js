@@ -10,7 +10,7 @@ const CharacterProfilePage = props => {
     })
 
     const characterProfile = (
-      <div class="container character">
+      
       <div class="flex-row">         
         <div class="flex-small">
           <img src={"https://render-eu.worldofwarcraft.com/character/" + props.character["thumbnail"]} alt="profile"/>
@@ -19,11 +19,7 @@ const CharacterProfilePage = props => {
           <div class="level">{ props.character["level"] }</div>    
         </div>
       </div>
-      <div class="flex-row">
-        
-           
-      </div>
-      </div>
+      
     )
 
     return(
@@ -32,7 +28,7 @@ const CharacterProfilePage = props => {
           { props.character.hasOwnProperty('error') ?(
             <div class="vertical-center content-section">Cant find that character</div>
           ):(
-            <div>
+            <div class="container character">
             {characterProfile}
             </div>
           )}
