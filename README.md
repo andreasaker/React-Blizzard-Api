@@ -3,10 +3,10 @@ Battle.net app, mobile first
 My first app built on an api, only function right now is to search for characters.
 
 The only config you need is to create a .env with :
-REACT_APP_BNET_ID
-REACT_APP_BNET_SECRET
+<br>REACT_APP_BNET_ID
+<br>REACT_APP_BNET_SECRET
 
-Its also made for EU servers right now.
+Its also made for only EU servers right now.
 Using https://cors-anywhere.herokuapp.com as proxy.
 
 
