@@ -1,6 +1,6 @@
 
-Battle.net app, mobile first
-My first app built on an api, only function right now is to search for characters.
+Battle.net app, mobile first<br>
+My first webb app built on an api, only function right now is to search for characters.
 
 The only config you need is to create a .env with :
 <br>REACT_APP_BNET_ID
